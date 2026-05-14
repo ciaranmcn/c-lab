@@ -4,6 +4,7 @@
 #include <netdb.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int main() {
     int server_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -51,7 +52,7 @@ int main() {
             close(new_socket_fd);
             exit(0);
         }
-        close(new_socket);
+        close(new_socket_fd);
 
     }
     return 0;
